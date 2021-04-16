@@ -1,0 +1,8 @@
+#rotate-animation{
+    height:220px;
+}
+#rotate-animation:hover{
+    transition: 2s;
+    transition-delay: .5s;
+    transform: rotate(360deg);
+}

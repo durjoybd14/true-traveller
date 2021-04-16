@@ -1,0 +1,28 @@
+aside{
+    background-color: #251d58;
+    height: 100% ;
+}
+
+aside ul{
+    list-style: none;
+    margin-top: 50px;
+
+}
+
+aside ul li{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+
+}
+
+aside ul li .link{
+    text-decoration: none;
+    color: white;
+
+}
+aside ul li .link:hover{
+    text-decoration: underline;
+    color: blue !important;
+
+}

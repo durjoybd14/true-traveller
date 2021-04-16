@@ -1,0 +1,40 @@
+footer{
+    color: white;
+    background-color: #434a54;
+    background-size: cover;
+}
+
+footer ul{
+    list-style-type: none;
+}
+
+footer ul li{
+    text-decoration:none;
+    margin-top: 5px;
+}
+
+footer ul li:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+footer ul li a:hover{
+    color:white;
+}
+
+.link{
+    text-decoration: none;
+    color:white;
+    margin-top: 100px;
+}
+
+footer .social-media li {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
