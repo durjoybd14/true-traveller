@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
 
     const handaleSubmit = () => {
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://mighty-cliffs-97551.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: adminInfo.email })

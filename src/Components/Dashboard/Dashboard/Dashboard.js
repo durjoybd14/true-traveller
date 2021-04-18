@@ -1,30 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import SideBar from '../SideBar/SideBar';
-import 'react-calendar/dist/Calendar.css';
-import { UserContext } from '../../../App';
-
-
 
 const Dashboard = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [selectedDate, setSelectedDate] = useState(new Date());
-    const [appointments, setAppointments] = useState([]);
-
-    // const handleDateChange = date => {
-    //     setSelectedDate(date);
-    // }
-
-    // useEffect(() => {
-    //     fetch('https://desolate-shore-11609.herokuapp.com/appointmentsByDate', {
-    //         method: 'POST',
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify({ date: selectedDate, email:loggedInUser.email })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => setAppointments(data))
-    // }, [selectedDate])
-
-
     return (
         <section>
             <div className="row">

@@ -27,7 +27,6 @@ const Book = ({ handlePayment }) => {
             .then(data => {
                 setSelectedPackage(data[0])
                 setNoOrder(false)
-                console.log(data);
             })
 
     }, [])

@@ -20,7 +20,6 @@ const BookList = () => {
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
-                console.log(data)
                 setLoading(false)
             })
     }, [])

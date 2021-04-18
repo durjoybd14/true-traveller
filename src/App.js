@@ -28,8 +28,7 @@ export const statusContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [status, setStatus] = useState('')
-  console.log(status);
+  const [status, setStatus] = useState('');
 
   return (
     <div className="App">

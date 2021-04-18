@@ -6,7 +6,7 @@ const Services = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://mighty-cliffs-97551.herokuapp.com/service')
             .then(res => res.json())
             .then(data => {
                 setServicesInfo(data)
