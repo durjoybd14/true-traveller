@@ -1,19 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
 import SideBar from '../SideBar/SideBar';
-import ManageServiceDetails from './ManageServiceDetails';
+import BookListDetails from './BookListDetails';
 
-const ManageService = () => {
+const BookList = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [loading, setLoading] = useState(true)
-    const [allServices, setAllServices] = useState([])
+    const [orders, setOrders] = useState([]);
+
+
+
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://mighty-cliffs-97551.herokuapp.com/orders?email=' + loggedInUser.email, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
             .then(res => res.json())
             .then(data => {
-                setAllServices(data)
+                setOrders(data)
+                console.log(data)
                 setLoading(false)
             })
     }, [])
-
     return (
         <section>
             <div className="row">
@@ -21,7 +31,7 @@ const ManageService = () => {
                     <SideBar></SideBar>
                 </div>
                 <div className="col-md-10 mt-5 p-5">
-                    <h4 className="text-center">All Services</h4>
+                    {loggedInUser && <h4 className="text-center">Dear, {loggedInUser.userName} You Previously Orderd These Packages</h4>}
                     {
                         loading ?
                             <div className="row">
@@ -39,14 +49,14 @@ const ManageService = () => {
                                         <tr>
                                             <th className="text-secondary" scope="col">Country</th>
                                             <th className="text-secondary" scope="col">Cost</th>
-                                            <th className="text-secondary" scope="col">Date</th>
+                                            <th className="text-secondary" scope="col">Order Date</th>
                                             <th className="text-secondary" scope="col">Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         {
-                                            allServices.map(allService => <ManageServiceDetails allService={allService} key={allService._id}></ManageServiceDetails>)
+                                            orders.map(order => <BookListDetails order={order} key={order._id} ></BookListDetails>)
                                         }
                                     </tbody>
                                 </table>
@@ -58,4 +68,4 @@ const ManageService = () => {
     );
 };
 
-export default ManageService;
+export default BookList;

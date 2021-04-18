@@ -14,7 +14,7 @@ const Reviews = () => {
             imageURL: imageURL
         };
 
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://mighty-cliffs-97551.herokuapp.com/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {

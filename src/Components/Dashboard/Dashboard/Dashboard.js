@@ -9,7 +9,6 @@ const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
-    console.log(appointments);
 
     // const handleDateChange = date => {
     //     setSelectedDate(date);

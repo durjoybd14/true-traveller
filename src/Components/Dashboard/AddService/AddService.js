@@ -6,25 +6,24 @@ import SideBar from '../SideBar/SideBar';
 const AddService = () => {
     const [imageURL, setImageURL] = useState(null)
     const { register, handleSubmit, formState: { errors } } = useForm();
-
     const onSubmit = data => {
-        const reviewData = {
+        const serviceData = {
             name: data.country,
             person: data.person,
-            day:data.day,
-            date:data.date,
-            cost:data.cost,
-            included:data.included,
+            day: data.day,
+            date: data.date,
+            cost: data.cost,
+            included: data.included,
             imageURL: imageURL
         };
 
-        const url = `http://localhost:5000/addService`;
+        const url = `https://mighty-cliffs-97551.herokuapp.com/addService`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(reviewData)
+            body: JSON.stringify(serviceData)
         })
             .then(res => console.log('server response', res))
     }
@@ -69,7 +68,7 @@ const AddService = () => {
                         {errors.date && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="mb-3">
-                        <input type="text" name="country" className="form-control" defaultValue="" {...register("cost", { required: true })} placeholder="Service Charge" />
+                        <input type="text" name="cost" className="form-control" defaultValue="" {...register("cost", { required: true })} placeholder="Service Charge" />
                         {errors.cost && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="mb-3">

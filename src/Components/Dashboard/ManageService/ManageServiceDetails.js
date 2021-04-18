@@ -3,16 +3,12 @@ import React from 'react';
 const ManageServiceDetails = (props) => {
     const { name, cost, date, _id } = props.allService;
     const deleteService = id => {
-        const url = `http://localhost:5000/deleteService/${id}`
+        const url = `https://mighty-cliffs-97551.herokuapp.com/deleteService/${id}`
         fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
-            .then(result => {
-                if (result) {
-                    window.location.reload();
-                }
-            })
+            .then(result => console.log(result))
     }
     return (
         <>

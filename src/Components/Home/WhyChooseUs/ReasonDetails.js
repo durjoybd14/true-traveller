@@ -4,7 +4,7 @@ const ReasonDetails = (props) => {
     const { name, logo, text } = props.reason;
     return (
         <div className="col-md-4 mt-2">
-            <div className="card mb-3 p-3 shadow-lg animation" style={{ height: '230px'}}>
+            <div className="card mb-3 p-3 shadow-lg animation" style={{ height: '230px' }}>
                 <div className="d-flex align-items-center justify-content-center">
                     <div>
                         <img src={logo} style={{ width: '100px' }} alt="..." />

@@ -11,7 +11,7 @@ const HeaderMain = () => {
                     <button className="button mt-3">Learn More</button>
                 </div>
                 <div className="col-md-6" >
-                    <img src={banner} alt="" className="img-fluid" style={{ borderRadius: "25%", opacity: "0.8"}} />
+                    <img src={banner} alt="" className="img-fluid" style={{ borderRadius: "25%", opacity: "0.8" }} />
                 </div>
             </div>
 

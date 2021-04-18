@@ -19,74 +19,96 @@ import Reviews from './Components/Dashboard/Reviews/Reviews';
 import AddService from './Components/Dashboard/AddService/AddService';
 import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
 import ManageService from './Components/Dashboard/ManageService/ManageService';
+import Book from './Components/Dashboard/Book/Book';
+import BookList from './Components/Dashboard/BookList/BookList';
+import AllOrder from './Components/Dashboard/AllOrder/AllOrder';
 
 export const UserContext = createContext();
+export const statusContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [status, setStatus] = useState('')
+  console.log(status);
+
   return (
     <div className="App">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <statusContext.Provider value={[status, setStatus]}>
 
-        <Router>
+          <Router>
 
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
 
-            <Route path="/about">
-              <About />
-            </Route>
+              <Route path="/about">
+                <About />
+              </Route>
 
-            <Route path="/contact">
-              <Contact />
-            </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
 
-            <Route path="/blogs">
-              <Blogs />
-            </Route>
+              <Route path="/blogs">
+                <Blogs />
+              </Route>
 
-            {/* <PrivateRoute path="/dashboard">
-              <Dashboard />
-            </PrivateRoute> */}
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
+              <PrivateRoute path="/dashboard">
+                <Dashboard />
+              </PrivateRoute>
 
-            <Route path="/login">
-              <Login />
-            </Route>
+              <PrivateRoute path="/book/:id">
+                <Book />
+              </PrivateRoute>
 
-            <Route path="/review">
-              <Reviews />
-            </Route>
+              <Route path="/book">
+                <Book />
+              </Route>
 
-            <Route path="/addService">
-              <AddService />
-            </Route>
+              <Route path="/booking">
+                <BookList />
+              </Route>
 
-            <Route path="/makeAdmin">
-              <MakeAdmin />
-            </Route>
+              <Route path="/orderList">
+                <AllOrder />
+              </Route>
 
-            <Route path="/manageServices">
-              <ManageService />
-            </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
 
-            <Route exact path="/">
-              <Home />
-            </Route>
+              <Route path="/review">
+                <Reviews />
+              </Route>
 
-            <Route path="*">
-              <NoMatch />
-            </Route>
+              <Route path="/addService">
+                <AddService />
+              </Route>
 
-          </Switch>
-        </Router>
+              <Route path="/makeAdmin">
+                <MakeAdmin />
+              </Route>
 
-        <ScrollToTop style={{ backgroundColor: '#12d0d9', padding: '5px' }} />
+              <Route path="/manageServices">
+                <ManageService />
+              </Route>
 
+              <Route exact path="/">
+                <Home />
+              </Route>
+
+              <Route path="*">
+                <NoMatch />
+              </Route>
+
+            </Switch>
+          </Router>
+
+          <ScrollToTop style={{ backgroundColor: '#12d0d9', padding: '5px' }} />
+
+        </statusContext.Provider>
       </UserContext.Provider>
     </div>
   );

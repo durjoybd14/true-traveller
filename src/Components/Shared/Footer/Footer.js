@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import paymentPic from '../../../images/payment.png'
+import paymentPic from '../../../images/payment.png';
 
 const Footer = () => {
 
@@ -36,7 +36,7 @@ const Footer = () => {
                         <li>+8801600112244</li>
                         <li>+8801600112255</li>
                     </ul>
-                    <img src={paymentPic} style={{width:'260px'}} alt=""/>
+                    <img src={paymentPic} style={{ width: '260px' }} alt="" />
                 </div>
 
                 <div className="text-center mt-5">
