@@ -1,4 +1,4 @@
-#The name of this website is _True Traveller
+#The name of this website is __True Traveller
 
 #Website Link: https://true-traveller.web.app
 
@@ -6,12 +6,12 @@
 
 
 Features of the website:
-#User can login using google
-#Everyone can take a unique tour on this website
-#It is a very user friendly website
-#It has a admin pannel ; their admin can change, add or maintain servies
-#This website made specially for traveller
-#User can review their experience
+1.User can login using google
+2.Everyone can take a unique tour on this website
+3.It is a very user friendly website
+4.It has a admin pannel ; their admin can change, add or maintain servies
+5.This website made specially for traveller
+6.User can review their experience
 
 
 
