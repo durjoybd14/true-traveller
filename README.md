@@ -1,11 +1,11 @@
-#The name of this website is __True Traveller
+# The name of this website is __True Traveller
 
-#Website Link: https://true-traveller.web.app
-
-
+# Website Link: https://true-traveller.web.app
 
 
-Features of the website:
+
+
+# Features of the website:
 
 1.User can login using google
 
@@ -22,7 +22,7 @@ Features of the website:
 
 
 
-Technology use on the website:
+# Technology use on the website:
 
 1.React,
 
