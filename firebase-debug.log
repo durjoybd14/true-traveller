@@ -1,0 +1,13 @@
+[debug] [2021-08-07T09:54:53.807Z] ----------------------------------------------------------------------
+[debug] [2021-08-07T09:54:53.810Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\NAIM\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-08-07T09:54:53.811Z] CLI Version:   9.12.1
+[debug] [2021-08-07T09:54:53.811Z] Platform:      win32
+[debug] [2021-08-07T09:54:53.812Z] Node Version:  v14.15.3
+[debug] [2021-08-07T09:54:53.813Z] Time:          Sat Aug 07 2021 15:54:53 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-08-07T09:54:53.814Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-07T09:54:53.836Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-07T09:54:53.837Z] > authorizing via signed-in user (nrd141913@gmail.com)
+[debug] [2021-08-07T09:54:53.837Z] [iam] checking project true-traveller for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-08-07T09:54:53.840Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/true-traveller:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

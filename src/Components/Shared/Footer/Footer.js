@@ -36,7 +36,7 @@ const Footer = () => {
                         <li>+8801600112244</li>
                         <li>+8801600112255</li>
                     </ul>
-                    <img src={paymentPic} style={{ width: '260px' }} alt="" />
+                    <img src={paymentPic} style={{ width: '250px',margin:'auto' }} alt="" />
                 </div>
 
                 <div className="text-center mt-5">
