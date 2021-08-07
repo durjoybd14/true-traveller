@@ -49,18 +49,16 @@ const WhyChooseUs = () => {
     return (
         <section className="container mt-5">
             <div className="row">
-                <div className="col-md-12">
                     <div className="text-center">
                         <h4>Why Choose Us</h4>
-                        <p>Here are just a few reasons to choose us:</p>
+                        <p className="text-muted">Here are just a few reasons to choose us</p>
                     </div>
-                    <div className=" row mt-4">
+                    <div className="row mt-4">
                         {
                             reasons.map(reason => <Reason key={reason.id} reason={reason}></Reason>)
                         }
                     </div>
-                </div>
-            </div>
+                </div>      
         </section>
     );
 };

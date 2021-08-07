@@ -1,5 +1,4 @@
 import React from 'react';
-import './ServiceDetails.css';
 import { useHistory } from 'react-router';
 
 const ServiceDetails = (props) => {
@@ -11,10 +10,10 @@ const ServiceDetails = (props) => {
     }
 
     return (
-        <div className="col-md-4">
-            <div className="card-group rounded shadow-lg mt-3">
+        <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="card-group rounded shadow-lg mt-3 animation">
                 <div className="card p-3 rounded">
-                    <img src={imageURL} className="card-img-top" id="rotate-animation" alt="..." />
+                    <img src={imageURL} style={{height:'220px'}} alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">Country: {name}</h5>
                         <p className="card-text">Person: {person}</p>

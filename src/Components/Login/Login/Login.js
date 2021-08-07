@@ -43,8 +43,8 @@ const Login = () => {
             <div className="row align-items-center" style={{ height: "100vh" }}>
                 <div className="col-md-3"></div>
                 <div className="col-md-6 shadow p-5">
-                    <h5>Please Login</h5>
-                    <form>
+                    {/* <h5>Please Login</h5> */}
+                    {/* <form>
                         <div className="form-group mt-3">
                             <label htmlFor="">User Name</label>
                             <input type="text" className="form-control" />
@@ -57,9 +57,9 @@ const Login = () => {
                             <label htmlFor="" className="text-danger">Forgot your password?</label>
                         </div>
                         <button className="button mt-3 px-4">Login</button>
-                    </form>
-                    <div className="from-group mt-5 text-center">
-                        <h5 className="text-muted">Or</h5>
+                    </form> */}
+                    <div className="from-group text-center">
+                        {/* <h5 className="text-muted">Or</h5> */}
                         <button className="button" onClick={handleGoogleSignIn}><i className="fa fa-google" aria-hidden="true"></i> Continue with Google</button>
                     </div>
                 </div>

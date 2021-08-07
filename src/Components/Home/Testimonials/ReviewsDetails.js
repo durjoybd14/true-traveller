@@ -3,7 +3,7 @@ import React from 'react';
 const ReviewsDetails = (props) => {
     const { name, review, imageURL } = props.review;
     return (
-        <div className="col-md-4">
+        <div className="col-lg-4 col-md-6 col-sm-12">
             <div className="card-group">
                 <div className="card p-3 rounded shadow-lg animation mt-3">
                     <div className="d-flex justify-content-around align-items-center">
