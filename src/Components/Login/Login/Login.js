@@ -31,7 +31,7 @@ const Login = () => {
     const storeAuthToken = () => {
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
             .then(function (idToken) {
-                sessionStorage.setItem('token', idToken);
+                localStorage.setItem('token', idToken);
                 history.replace(from);
             }).catch(function (error) {
                 console.log(error);
@@ -42,10 +42,10 @@ const Login = () => {
         <div className="container">
             <div className="row align-items-center" style={{ height: "100vh" }}>
                 <div className="col-md-3"></div>
-                <div className="col-md-6 shadow p-5">
+                <div className="p-5 shadow col-md-6">
                     {/* <h5>Please Login</h5> */}
                     {/* <form>
-                        <div className="form-group mt-3">
+                        <div className="mt-3 form-group">
                             <label htmlFor="">User Name</label>
                             <input type="text" className="form-control" />
                         </div>
@@ -56,9 +56,9 @@ const Login = () => {
                         <div className="form-group">
                             <label htmlFor="" className="text-danger">Forgot your password?</label>
                         </div>
-                        <button className="button mt-3 px-4">Login</button>
+                        <button className="px-4 mt-3 button">Login</button>
                     </form> */}
-                    <div className="from-group text-center">
+                    <div className="text-center from-group">
                         {/* <h5 className="text-muted">Or</h5> */}
                         <button className="button" onClick={handleGoogleSignIn}><i className="fa fa-google" aria-hidden="true"></i> Continue with Google</button>
                     </div>

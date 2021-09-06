@@ -7,12 +7,13 @@ const PrivateRoute = ({ children, ...rest }) => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const isLoggedIn = () => {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('token');
     if (!token) {
       return false;
     }
     const decodedToken = jwt_decode(token);
-    const currentTime = new Date().getTime() / 1000;
+    // const currentTime = 10000;
+    const currentTime = new Date().getTime() / 10000;
     return decodedToken.exp > currentTime;
   }
   return (
