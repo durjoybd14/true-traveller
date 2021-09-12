@@ -35,13 +35,13 @@ const SimpleCardForm = ({ handlePayment }) => {
         <div className="mt-3">
             <form onSubmit={handleSubmit}>
                 <CardElement />
-                <button className="button mt-4" type="submit" disabled={!stripe}>Pay Now</button>
+                <button className="mt-4 button" type="submit" disabled={!stripe}>Pay Now</button>
             </form>
             {
                 paymentError && <p style={{ color: 'red' }}>{paymentError}</p>
             }
             {
-                paymentSuccess && <p style={{ color: 'green' }}>Your payment succesfully paid!</p>
+                paymentSuccess && <p style={{ color: 'green' }}>Your payment successfully done!</p>
             }
         </div>
     );

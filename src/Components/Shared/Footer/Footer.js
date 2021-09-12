@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="p-5 mt-5">
             <div className="row">
-                <div className="col-md-3 mt-3">
+                <div className="mt-3 col-md-3">
                     <h5>Useful Links</h5>
                     <Link className="link" to="/about">About Us</Link><br />
                     <Link className="link" to="/blogs">Blogs</Link><br />
@@ -18,28 +18,28 @@ const Footer = () => {
                     <Link className="link" to="#">Refund & Return Policy</Link><br />
                 </div>
 
-                <div className="col-md-6 mt-3">
+                <div className="mt-3 col-md-6">
                     <h5>Our Address</h5>
                     <p>Due to Covid-19 our office is open every Monday 11am-5pm. All services are available online as usual</p>
                     <p>1202 Middle Badda, Dhaka, Bangladesh </p>
                     <h6 className="">Follow us</h6>
-                    <ul className="social-media list-inline mt-3 d-flex">
+                    <ul className="mt-3 social-media list-inline d-flex">
                         <li className="list-inline-item"><a href="https://www.facebook.com"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li className="list-inline-item"><a href="https://www.twitter.com"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li className="list-inline-item"><a href="https://www.instagram.com"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
-                <div className="col-md-3 mt-3">
+                <div className="mt-3 col-md-3">
                     <ul>
                         <h5>Call now</h5>
                         <li>+8801600112233</li>
                         <li>+8801600112244</li>
                         <li>+8801600112255</li>
                     </ul>
-                    <img src={paymentPic} style={{ width: '250px',margin:'auto' }} alt="" />
+                    <img src={paymentPic} style={{ width: '12rem',margin:'auto' }} alt="" />
                 </div>
 
-                <div className="text-center mt-5">
+                <div className="mt-5 text-center">
                     <p>Copyright &copy;{(new Date()).getFullYear()} by True Traveller | All Rights Reserved</p>
                 </div>
             </div>

@@ -1,98 +1,65 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Home from './Components/Home/Home/Home';
-
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Components/Home/Home/Home";
 import ScrollToTop from "react-scroll-to-top";
-import { createContext, useState } from 'react';
-import Login from './Components/Login/Login/Login';
-import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
-import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
-import Contact from './Components/Contact/Contact';
-import About from './Components/About/About';
-import Blogs from './Components/Blogs/Blogs';
-import NoMatch from './Components/Shared/NoMatch/NoMatch';
-import Reviews from './Components/Dashboard/Reviews/Reviews';
-import AddService from './Components/Dashboard/AddService/AddService';
-import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
-import ManageService from './Components/Dashboard/ManageService/ManageService';
-import Book from './Components/Dashboard/Book/Book';
-import BookList from './Components/Dashboard/BookList/BookList';
-import AllOrder from './Components/Dashboard/AllOrder/AllOrder';
+import { createContext, useState } from "react";
+import Login from "./Components/Login/Login/Login";
+import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Contact from "./Components/Contact/Contact";
+import About from "./Components/About/About";
+import Blogs from "./Components/Blogs/Blogs";
+import NoMatch from "./Components/Shared/NoMatch/NoMatch";
+import Reviews from "./Components/Dashboard/Reviews/Reviews";
+import AddService from "./Components/Dashboard/AddService/AddService";
+import MakeAdmin from "./Components/Dashboard/MakeAdmin/MakeAdmin";
+import ManageService from "./Components/Dashboard/ManageService/ManageService";
+import Book from "./Components/Dashboard/Book/Book";
+import BookList from "./Components/Dashboard/BookList/BookList";
+import AllOrder from "./Components/Dashboard/AllOrder/AllOrder";
+import { AuthProvider } from "./contexts/Authcontext";
+import PrivateRoute from "./HOC/PrivateRoute";
+import PublicRoute from "./HOC/PublicRoute";
 
-export const UserContext = createContext();
 export const statusContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   return (
-    <div className="App">
-      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <div className="App" style={{overflow:'hidden'}}>
+      <AuthProvider>
         <statusContext.Provider value={[status, setStatus]}>
-
           <Router>
-
             <Switch>
-              <Route path="/home">
-                <Home />
-              </Route>
+              <Route exact path="/about" component={About} />
 
-              <Route path="/about">
-                <About />
-              </Route>
+              <Route exact path="/contact" component={Contact} />
 
-              <Route path="/contact">
-                <Contact />
-              </Route>
+              <Route exact path="/blogs" component={Blogs} />
 
-              <Route path="/blogs">
-                <Blogs />
-              </Route>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-              <PrivateRoute path="/dashboard">
-                <Dashboard />
-              </PrivateRoute>
+              <PrivateRoute exact path="/book/:id" component={Book} />
 
-              <PrivateRoute path="/book/:id">
-                <Book />
-              </PrivateRoute>
+              <PrivateRoute exact path="/book" component={Book} />
 
-              <Route path="/book">
-                <Book />
-              </Route>
+              <PrivateRoute exact path="/booking" component={BookList} />
 
-              <Route path="/booking">
-                <BookList />
-              </Route>
+              <PrivateRoute exact path="/orderList" component={AllOrder} />
 
-              <Route path="/orderList">
-                <AllOrder />
-              </Route>
+              <PublicRoute exact path="/login" component={Login} />
 
-              <Route path="/login">
-                <Login />
-              </Route>
+              <PrivateRoute exact path="/review" component={Reviews} />
 
-              <Route path="/review">
-                <Reviews />
-              </Route>
+              <PrivateRoute exact path="/addService" component={AddService} />
 
-              <Route path="/addService">
-                <AddService />
-              </Route>
+              <PrivateRoute exact path="/makeAdmin" component={MakeAdmin} />
 
-              <Route path="/makeAdmin">
-                <MakeAdmin />
-              </Route>
-
-              <Route path="/manageServices">
-                <ManageService />
-              </Route>
+              <PrivateRoute
+                exact
+                path="/manageServices"
+                component={ManageService}
+              />
 
               <Route exact path="/">
                 <Home />
@@ -101,14 +68,12 @@ function App() {
               <Route path="*">
                 <NoMatch />
               </Route>
-
             </Switch>
           </Router>
 
-          <ScrollToTop style={{ backgroundColor: '#12d0d9', padding: '5px' }} />
-
+          <ScrollToTop style={{ backgroundColor: "#12d0d9", padding: "5px" }} />
         </statusContext.Provider>
-      </UserContext.Provider>
+      </AuthProvider>
     </div>
   );
 }

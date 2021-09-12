@@ -3,15 +3,17 @@ import React from 'react';
 const ReasonDetails = (props) => {
     const { name, logo, text } = props.reason;
     return (
-        <div className="col-lg-4 col-md-6 col-sm-12 mt-3">
-            <div className="card mb-3 p-3 shadow-lg animation" style={{ height: '20rem' }}>
-                <div className="text-center my-auto">
+        <div className="mt-3 col-lg-4 col-md-6 col-sm-12">
+            <div className="card-group">
+            <div className="p-3 mb-3 shadow-lg card animation" style={{ height: '20rem' }}>
+                <div className="my-auto text-center">
                     <img src={logo} style={{ width: '100px' }} alt="..." />
-                    <h6 className="card-title mt-2">{name}</h6>
-                <div className="card-body overflow-auto">  
+                    <h6 className="mt-2 card-title">{name}</h6>
+                <div className="overflow-auto card-body">  
                     <p className="text-muted">{text}</p>
                 </div>  
                 </div>
+            </div>
             </div>
         </div>
     );
